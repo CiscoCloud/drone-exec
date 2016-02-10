@@ -3,9 +3,10 @@ package yaml
 // Config is a typed representation of the
 // Yaml configuration file.
 type Config struct {
-	Cache Plugin
-	Clone Plugin
-	Build BuildStep
+	Before Pluginslice
+	Cache  Plugin
+	Clone  Plugin
+	Build  BuildStep
 
 	Compose Containerslice
 	Publish Pluginslice

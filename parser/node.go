@@ -22,6 +22,7 @@ const (
 	NodeCompose
 	NodeNotify
 	NodePublish
+	NodeBefore
 )
 
 // Nodes.

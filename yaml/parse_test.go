@@ -130,6 +130,13 @@ func TestParse(t *testing.T) {
 }
 
 var sample = `
+before:
+  auth:
+    authorized_users:
+      - user1
+    when:
+      branch: master
+
 clone:
   image: git
   pull: true

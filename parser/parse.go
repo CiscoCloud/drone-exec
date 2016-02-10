@@ -33,6 +33,12 @@ func Load(conf *yaml.Config, rules []RuleFunc) (*Tree, error) {
 	var tree = newTree(rules)
 	var err error
 
+	// Before.
+	err = tree.appendPlugin(NodeBefore, conf.Before.Slice()...)
+	if err != nil {
+		return nil, err
+	}
+
 	// Cache.
 	err = tree.appendCache(conf.Cache)
 	if err != nil {
