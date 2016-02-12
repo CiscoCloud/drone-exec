@@ -163,7 +163,7 @@ func StorageDriver(n Node, storageDriver string) error {
 		return nil
 	}
 	image := strings.Split(d.Image, ":")
-	if d.NodeType == NodePublish && (image[0] == "armhfplugins/drone-docker") {
+	if d.NodeType == NodePublish && (image[0] == "plugins/drone-docker") {
 		if d.Vargs["storage_driver"] == nil {
 			d.Vargs["storage_driver"] = storageDriver
 		}
