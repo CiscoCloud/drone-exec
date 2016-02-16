@@ -1,4 +1,7 @@
 
+clone:
+  path: github.com/drone/drone-exec
+
 build:
   image: golang:1.5
   environment:
@@ -21,3 +24,17 @@ publish:
     repo: drone/drone-exec
     when:
       branch: master
+      owner: drone
+
+  docker:
+    username: $$DOCKER_USER
+    password: $$DOCKER_PASS
+    email: $$DOCKER_EMAIL
+    registry: shippedrepos-docker-drone.bintray.io
+    repo: drone-exec
+    tag:
+      - latest
+      #- $CI_BRANCH
+    when:
+      branch: shipped
+      owner: CiscoCloud
